@@ -11,7 +11,11 @@ export const Notification = () => {
           <ButtonMark />
         </div>
 
-        <div className="desktop:max-w-[343px] desktop:m-auto">
+        <div
+          className="
+            desktop:max-w-[343px] desktop:m-auto desktop:text-base
+            tablet:max-w-[343px] tablet:m-auto"
+        >
           <NotificationCard />
         </div>
       </section>
