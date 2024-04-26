@@ -1,13 +1,17 @@
+import { avatars } from "./../assets/images";
+
 export const NotificationCard = () => {
   return (
     <>
       {/* Notifications */}
       <div>
         <div>
+          <img src={avatars.markWebber} alt="" />
           <p>
             {" "}
             <span>Mark Webber</span> <span>reacted to your recent post</span>{" "}
-            <span>My first tournament today!</span>
+            <span>My first tournament today!</span>{" "}
+            <span className="status">*</span>
           </p>
           <p>1m ago</p>
         </div>

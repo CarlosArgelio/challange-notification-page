@@ -1,7 +1,7 @@
 export const ButtonMark = () => {
   return (
-    <div>
-      <button>Mark all as read</button>
-    </div>
+    <>
+      <p>Mark all as read</p>
+    </>
   );
 };

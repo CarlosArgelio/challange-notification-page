@@ -3,18 +3,20 @@ import { ButtonMark, Counter, NotificationCard } from "./../Components";
 export const Notification = () => {
   return (
     <>
-      <aside>
-        <div>
-          <p>
+      <section className="main">
+        <div className="notification">
+          <h3>
             Notifications <Counter />
-          </p>
+          </h3>
 
           <ButtonMark />
         </div>
 
-        {/* All Notification */}
-        <NotificationCard />
-      </aside>
+        <div className="post">
+          {/* All Notification */}
+          <NotificationCard />
+        </div>
+      </section>
     </>
   );
 };
