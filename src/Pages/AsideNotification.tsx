@@ -11,8 +11,7 @@ export const Notification = () => {
           <ButtonMark />
         </div>
 
-        <div className="post">
-          {/* All Notification */}
+        <div className="desktop:max-w-[343px] desktop:m-auto">
           <NotificationCard />
         </div>
       </section>
