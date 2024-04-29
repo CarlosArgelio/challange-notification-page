@@ -3,130 +3,136 @@ import { avatars, ImageGhess } from "./../assets/images";
 export const NotificationCard = () => {
   return (
     <>
-      <div className="flex gap-3 p-4 text-sm bg-very-ligth-graying-blue text-very-dark-blue cursor-pointer mb-1 rounded-lg relative">
-        <img src={avatars.markWebber} alt="" className="w-10 h-10" />
-        <div>
-          <p>
-            {" "}
-            <span className="font-bold text-very-dark-blue hover:text-primary-blue">
-              Mark Webber
-            </span>{" "}
-            <span>reacted to your recent post</span>{" "}
-            <span className="font-semibold hover:text-primary-blue">
-              My first tournament today!
-            </span>{" "}
-            {/* status */}
-            <span className="inline-block w-2 h-2 bg-primary-red rounded-full ml-2"></span>
-          </p>
-          <p className="text-grayish-blue font-medium">1m ago</p>
-        </div>
-      </div>
+      {NOTIFICATIONS.map((item, index) => {
+        return (
+          <div
+            id={(index + 1).toString()}
+            className={`flex gap-3 p-4 text-sm text-very-dark-blue cursor-pointer mb-1 rounded-lg relative ${
+              item.status ? "" : "bg-very-ligth-graying-blue"
+            }`}
+          >
+            {/* Avatar User */}
+            <img
+              src={item.avatar}
+              alt={`Avatar user ${item.name}`}
+              className="w-10 h-10"
+            />
+            {/* Content */}
+            <div>
+              <p>
+                {/* Name user */}{" "}
+                <span className="font-bold text-very-dark-blue hover:text-primary-blue">
+                  {item.name}
+                </span>{" "}
+                {/* Action */}
+                <span>{item.action}</span> {/* Site */}
+                {item.site ? (
+                  <span className="font-semibold hover:text-primary-blue">
+                    {item.site}
+                  </span>
+                ) : null}{" "}
+                {/* Status */}
+                {item.status ? null : (
+                  <span className="inline-block w-2 h-2 bg-primary-red rounded-full ml-2"></span>
+                )}{" "}
+              </p>
+              {/* Time */}
+              <span className="text-grayish-blue font-medium">{item.time}</span>
 
-      <div className="flex gap-3 p-4 text-sm bg-very-ligth-graying-blue text-very-dark-blue cursor-pointer mb-1 rounded-lg relative">
-        <img src={avatars.angelaGray} alt="" className="w-10 h-10" />
-        <div>
-          <p>
-            {" "}
-            <span className="font-bold text-very-dark-blue hover:text-primary-blue">
-              Angela Gray
-            </span>{" "}
-            <span>followed you</span> {/* status */}
-            <span className="inline-block w-2 h-2 bg-primary-red rounded-full ml-2"></span>
-          </p>
-          <p className="text-grayish-blue font-medium">5m ago</p>
-        </div>
-      </div>
-
-      <div className="flex gap-3 p-4 text-sm bg-very-ligth-graying-blue text-very-dark-blue cursor-pointer mb-1 rounded-lg relative">
-        <img src={avatars.jacobThompson} alt="" className="w-10 h-10" />
-        <div>
-          <p>
-            {" "}
-            <span className="font-bold text-very-dark-blue hover:text-primary-blue">
-              Jacob Thompon
-            </span>{" "}
-            <span>has joined your group</span>{" "}
-            <span className="font-bold text-primary-blue">Chess Club</span>{" "}
-            {/* status */}
-            <span className="inline-block w-2 h-2 bg-primary-red rounded-full ml-2"></span>
-          </p>
-          <p className="text-grayish-blue font-medium">1d ago</p>
-        </div>
-      </div>
-
-      <div className="flex gap-3 p-4 text-sm text-very-dark-blue cursor-pointer mb-1 rounded-lg relative">
-        <img src={avatars.rizkyHasanuddin} alt="" className="w-10 h-10" />
-        <div>
-          <p>
-            {" "}
-            <span className="font-bold text-very-dark-blue hover:text-primary-blue">
-              Rizky Hasanuddin
-            </span>{" "}
-            <span>sent you a private message</span> {/* status */}
-            {/* <span className="inline-block w-2 h-2 bg-primary-red rounded-full ml-2"></span> */}
-          </p>
-          <p className="text-grayish-blue font-medium mb-2">5 days ago</p>
-          <p className="border border-ligth-grayish-blue-2 p-1 rounded-lg hover:bg-ligth-grayish-blue-1">
-            Hello, thanks for setting up the Chess Club. I've been a member for
-            a few weeks now and I'm already having lots of fun and improving my
-            game.
-          </p>
-        </div>
-      </div>
-
-      <div className="flex gap-3 p-4 text-sm text-very-dark-blue cursor-pointer mb-1 rounded-lg relative">
-        <img src={avatars.kimberlySmith} alt="" className="w-10 h-10" />
-        <div className="flex flex-col">
-          <p>
-            {" "}
-            <span className="font-bold text-very-dark-blue hover:text-primary-blue">
-              Kimberly Smith
-            </span>{" "}
-            <span>commented on your picture</span> {/* status */}
-            {/* <span className="inline-block w-2 h-2 bg-primary-red rounded-full ml-2"></span> */}
-          </p>
-          <p className="text-grayish-blue font-medium mb-2">1 week ago</p>
-        </div>
-        <img src={ImageGhess} alt="" className="w-10 h-10 absolute right-4" />
-        {/* absolute right-4 */}
-      </div>
-
-      <div className="flex gap-3 p-4 text-sm text-very-dark-blue cursor-pointer mb-1 rounded-lg relative">
-        <img src={avatars.natashaPeterson} alt="" className="w-10 h-10" />
-        <div>
-          <p>
-            {" "}
-            <span className="font-bold text-very-dark-blue hover:text-primary-blue">
-              Nathan Peterson
-            </span>{" "}
-            <span>reacted to your recent post</span>{" "}
-            <span className="font-semibold hover:text-primary-blue">
-              5 end-game strategies to increase your win rate
-            </span>{" "}
-            {/* status */}
-            {/* <span className="inline-block w-2 h-2 bg-primary-red rounded-full ml-2"></span> */}
-          </p>
-          <p className="text-grayish-blue font-medium">2 weeks ago</p>
-        </div>
-      </div>
-
-      {/* bg-very-ligth-graying-blue */}
-      <div className="flex gap-3 p-4 text-sm  text-very-dark-blue cursor-pointer mb-1 rounded-lg relative">
-        <img src={avatars.annaKim} alt="" className="w-10 h-10" />
-        <div>
-          <p>
-            {" "}
-            <span className="font-bold text-very-dark-blue hover:text-primary-blue">
-              Anna Kim
-            </span>{" "}
-            <span>left the group</span>{" "}
-            <span className="font-bold text-primary-blue">Chess Club</span>{" "}
-            {/* status */}
-            {/* <span className="inline-block w-2 h-2 bg-primary-red rounded-full ml-2"></span> */}
-          </p>
-          <p className="text-grayish-blue font-medium">2 weeks ago</p>
-        </div>
-      </div>
+              {/* Message */}
+              {item.message ? (
+                <p className="border border-ligth-grayish-blue-2 p-1 rounded-lg hover:bg-ligth-grayish-blue-1">
+                  {item.message}
+                </p>
+              ) : null}
+            </div>
+            {/* Image Ref */}
+            {item.imgRef ? (
+              <img
+                src={ImageGhess}
+                alt=""
+                className="w-10 h-10 absolute right-4"
+              />
+            ) : null}
+          </div>
+        );
+      })}
     </>
   );
 };
+
+const NOTIFICATIONS = [
+  {
+    id: 1,
+    avatar: avatars.markWebber,
+    name: "Mark Webber",
+    action: "reacted to your recent post",
+    site: "My first tournament today!",
+    type: "POST",
+    status: false,
+    time: "1m ago",
+  },
+  {
+    id: 2,
+    avatar: avatars.angelaGray,
+    name: "Angela Gray",
+    action: "followed you",
+    site: "",
+    type: "POST",
+    status: false,
+    time: "5m ago",
+  },
+  {
+    id: 3,
+    avatar: avatars.jacobThompson,
+    name: "Jacob Thompson",
+    action: "has joined your group",
+    site: "Chess Club",
+    type: "POST",
+    status: false,
+    time: "1d ago",
+  },
+  {
+    id: 4,
+    avatar: avatars.rizkyHasanuddin,
+    name: "Rizky Hasanuddin",
+    action: "sent you a private message",
+    site: "",
+    type: "MESSAGE",
+    message:
+      "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
+    status: true,
+    time: "5d ago",
+  },
+  {
+    id: 5,
+    avatar: avatars.kimberlySmith,
+    name: "Kimberly Smith",
+    action: "commented on your picture",
+    site: "",
+    type: "POST",
+    imgRef: ImageGhess,
+    status: true,
+    time: "1w ago",
+  },
+  {
+    id: 6,
+    avatar: avatars.natashaPeterson,
+    name: "Natasha Peterson",
+    action: "reacted to your recent post",
+    site: "5 end-game strategies to increase your win rate",
+    type: "POST",
+    status: true,
+    time: "2w ago",
+  },
+  {
+    id: 7,
+    avatar: avatars.annaKim,
+    name: "Anna Kim",
+    action: "left the group",
+    site: "Chess Club",
+    type: "POST",
+    status: true,
+    time: "2w ago",
+  },
+];
